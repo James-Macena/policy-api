@@ -4,7 +4,10 @@ WORKDIR /opt/app/
 
 RUN apk add --update --no-cache \
     build-base \
-    bash
+    bash \
+    vim
+
+ENV EDITOR=vim
 
 COPY Gemfile Gemfile.lock ./
 
