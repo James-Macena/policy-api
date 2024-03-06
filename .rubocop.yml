@@ -12,10 +12,5 @@ AllCops:
 
   UseCache: false
 
-Layout/DotPosition:
-  EnforcedStyle: trailing
-
-Style/ClassAndModuleChildren:
-  EnforcedStyle: compact
 Style/Documentation:
   Enabled: false
