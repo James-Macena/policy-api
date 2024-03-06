@@ -4,8 +4,8 @@ bash:
 
 # runs tests
 test:
-	docker compose run -it --rm --service-ports app bash -c "bundle exec rspec"
+	docker compose run -it --rm app bash -c "bundle exec rspec"
 
 # runs rubocop(ex: make rubocop path=my/path)
 rubocop:
-	docker compose run -it --rm --service-ports app bash -c "bundle exec rubocop --format=simple ${path}"
+	docker compose run -it --rm app bash -c "bundle exec rubocop --format=simple ${path}"
