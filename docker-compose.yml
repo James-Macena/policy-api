@@ -1,4 +1,3 @@
-version: "3.8"
 services:
   app:
     build: .
@@ -6,8 +5,13 @@ services:
       - 3000:3000
     environment:
       RAILS_ENV: development
+    networks:
+      - policy-base_default
     volumes:
       - .:/opt/app
       - rubygems:/usr/local/bundle
+networks:
+  policy-base_default:
+    external: true
 volumes:
   rubygems:

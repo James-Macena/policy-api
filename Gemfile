@@ -5,9 +5,10 @@ source 'https://rubygems.org'
 ruby '3.1.4'
 
 gem 'bootsnap', require: false
+gem 'bunny', '~> 2.22'
+gem 'graphql', '~> 2.2'
 gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.3'
-gem 'rails-graphql', '~> 1.0'
 gem 'tzinfo-data'
 
 group :development, :test do
