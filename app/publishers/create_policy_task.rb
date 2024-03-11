@@ -17,9 +17,9 @@ class CreatePolicyTask
     connection = Bunny.new(hostname: 'rabbitmq')
     connection.start
     channel = connection.create_channel
-    queue = channel.queue(QUEUE_NAME)
+    queue = channel.queue(QUEUE_NAME, durable: true)
 
-    channel.default_exchange.publish(policy, routing_key: queue.name)
+    channel.default_exchange.publish(policy, routing_key: queue.name, persistent: true)
     connection.close
   end
 end
