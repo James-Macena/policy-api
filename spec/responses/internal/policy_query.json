@@ -1,0 +1,14 @@
+{
+  "validity": "2026-03-12",
+  "vehicle": {
+    "model": "Fit 1.4",
+    "make": "Honda",
+    "plate": "CFPA-8987",
+    "year": "2007"
+  },
+  "insured": {
+    "name": "Mr. Han",
+    "documentNumber": "12345678062",
+    "documentType": "cpf"
+  }
+}

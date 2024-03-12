@@ -1,0 +1,25 @@
+{
+  "id": 1,
+  "validity": "2026-03-12",
+  "created_at": "2024-03-12T15:16:51.288Z",
+  "updated_at": "2024-03-12T15:16:51.288Z",
+  "insured_id": 1,
+  "insured": {
+    "id": 1,
+    "name": "Mr. Han",
+    "document_number": "12345678062",
+    "document_type": "cpf",
+    "created_at": "2024-03-12T15:16:30.218Z",
+    "updated_at": "2024-03-12T15:16:30.218Z"
+  },
+  "vehicle": {
+    "id": 1,
+    "model": "Fit 1.4",
+    "make": "Honda",
+    "plate": "CFPA-8987",
+    "year": "2007",
+    "created_at": "2024-03-12T15:17:17.957Z",
+    "updated_at": "2024-03-12T15:17:17.957Z",
+    "insured_id": 1
+  }
+}

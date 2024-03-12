@@ -1,14 +1,16 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
-ENV['RAILS_ENV'] ||= 'test'
+ENV['RAILS_ENV'] = 'test'
 require_relative '../config/environment'
-# Prevent database truncation if the environment is production
-abort('The Rails environment is running in production mode!') if Rails.env.production?
+# Prevent database truncation if the environment is' not test
+abort('The Rails environment is running in production mode!') unless Rails.env.test?
 require 'rspec/rails'
-# Add additional requires below this line. Rails is not loaded until this point!
+require 'webmock/rspec'
 
 Rails.root.glob('spec/support/**/*.rb').sort.each { |f| require f }
+
+WebMock.disable_net_connect!
 
 RSpec.configure do |config|
   # Remove this line to enable support for ActiveRecord

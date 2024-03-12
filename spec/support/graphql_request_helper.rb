@@ -5,5 +5,5 @@ def graphql_request(graphql_string)
 end
 
 def response_data
-  JSON.parse(response.body).deep_symbolize_keys[:data]
+  JSON.parse(response.body, symbolize_names: true)[:data]
 end
