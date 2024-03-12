@@ -7,6 +7,7 @@ module Resolvers
 
     def resolve(id:)
       response = Faraday.get("#{ENV.fetch('POLICY_BASE_API_URL')}/policies/#{id}")
+      return unless response.success?
 
       JSON.parse(response.body, symbolize_names: true)
     end

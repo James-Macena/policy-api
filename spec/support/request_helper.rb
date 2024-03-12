@@ -19,11 +19,11 @@ module Stubbs
     stub_get(url: url, status: args[:status], response: args[:response])
   end
 
-  def stub_get(url:, status:, response: {})
+  def stub_get(url:, status:, response: '')
     stub_request(:get, url).to_return(body: response, status: status)
   end
 
-  def stub_post(url:, params:, status:, response: {})
+  def stub_post(url:, params:, status:, response: '')
     stub_request(:get, url)
       .with(body: params)
       .to_return(body: response, status: status)
