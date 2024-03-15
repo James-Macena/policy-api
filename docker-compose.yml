@@ -4,12 +4,13 @@ services:
     container_name: policy-api-app
     hostname: policy-api
     ports:
-      - 3000:3000
+      - ${PORT}:${PORT}
     networks:
       - policy-base_default
     volumes:
       - .:/opt/app
       - rubygems:/usr/local/bundle
+    env_file: .env
     command: bash -c 'bundle exec rails s -b 0.0.0.0'
 networks:
   policy-base_default:
