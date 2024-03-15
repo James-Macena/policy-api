@@ -14,7 +14,7 @@ class CreatePolicyTask
   end
 
   def publish
-    connection = Bunny.new(hostname: 'rabbitmq')
+    connection = Bunny.new(hostname: ENV.fetch('RABBITMQ_HOST'))
     connection.start
     channel = connection.create_channel
     queue = channel.queue(QUEUE_NAME, durable: true)

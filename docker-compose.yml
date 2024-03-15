@@ -8,6 +8,7 @@ services:
     volumes:
       - .:/opt/app
       - rubygems:/usr/local/bundle
+    command: bash -c 'bundle exec rails s -b 0.0.0.0'
 networks:
   policy-base_default:
     external: true
