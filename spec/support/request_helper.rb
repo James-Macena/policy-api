@@ -19,6 +19,14 @@ module Stubbs
     stub_get(url: url, status: args[:status], response: args[:response])
   end
 
+  def stub_get_policies(args)
+    url = "#{ENV.fetch('POLICY_BASE_API_URL')}/policies"
+
+    stub_get(url: url, status: args[:status], response: args[:response])
+  end
+
+  private
+
   def stub_get(url:, status:, response: '')
     stub_request(:get, url).to_return(body: response, status: status)
   end
