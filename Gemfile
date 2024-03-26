@@ -8,6 +8,7 @@ gem 'bootsnap', require: false
 gem 'bunny', '~> 2.22'
 gem 'faraday', '~> 2.9'
 gem 'graphql', '~> 2.2'
+gem 'jwt'
 gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.3'
 gem 'tzinfo-data'

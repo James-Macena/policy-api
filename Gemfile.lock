@@ -119,6 +119,8 @@ GEM
       rdoc
       reline (>= 0.4.2)
     json (2.6.1)
+    jwt (2.8.1)
+      base64
     language_server-protocol (3.17.0.3)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -285,6 +287,7 @@ DEPENDENCIES
   dotenv-rails
   faraday (~> 2.9)
   graphql (~> 2.2)
+  jwt
   pry-byebug (~> 3.10)
   puma (>= 5.0)
   rails (~> 7.1.3)
