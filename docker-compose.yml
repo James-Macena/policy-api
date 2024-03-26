@@ -2,7 +2,7 @@ services:
   app:
     build: .
     container_name: policy-api-app
-    hostname: policy-api
+    hostname: ${APP_HOST}
     ports:
       - ${PORT}:${PORT}
     networks:

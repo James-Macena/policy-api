@@ -55,6 +55,6 @@ Rails.application.configure do
 
   config.hosts = [
     'localhost',
-    'policy-api'
+    ENV.fetch('APP_HOST')
   ]
 end
