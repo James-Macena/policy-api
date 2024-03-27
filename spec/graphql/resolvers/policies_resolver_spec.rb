@@ -30,8 +30,14 @@ RSpec.describe 'Policies resolver', type: :request do
   end
 
   context 'when find policies successfully' do
-    let(:get_policies_response) { [load_json_symbolized('spec/responses/external/get_policy.json')].to_json }
-    let(:get_policies_args) { { status: 200, response: get_policies_response } }
+    let(:get_policies_response) do
+      [load_json_symbolized('spec/responses/external/get_policy.json')]
+    end
+
+    let(:get_policies_args) do
+      { status: 200, response: get_policies_response }
+    end
+
     let(:expected_response) do
       [load_json_symbolized('spec/responses/internal/policy_query.json')]
     end

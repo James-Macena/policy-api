@@ -13,12 +13,6 @@ module FileHelpers
 end
 
 module Stubbs
-  def stub_get_policy(args)
-    url = "#{ENV.fetch('POLICY_BASE_API_URL')}/policies/#{args[:id]}"
-
-    stub_get(url: url, status: args[:status], response: args[:response])
-  end
-
   def stub_get_policies(args)
     url = "#{ENV.fetch('POLICY_BASE_API_URL')}/policies"
 
