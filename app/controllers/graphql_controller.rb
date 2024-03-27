@@ -2,14 +2,13 @@
 
 class GraphqlController < ApplicationController
   def execute
-    variables = prepare_variables(params[:variables])
-    query = params[:query]
-    operation_name = params[:operationName]
-    context = {
-      # Query context goes here, for example:
-      # current_user: current_user,
-    }
-    result = PolicyApiSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
+    result = PolicyApiSchema.execute(
+      params[:query],
+      variables: prepare_variables(params[:variables]),
+      context: { auth_token: auth_token },
+      operation_name: params[:operationName]
+    )
+
     render json: result
   rescue StandardError => e
     raise e unless Rails.env.development?

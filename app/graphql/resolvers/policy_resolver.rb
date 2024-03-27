@@ -6,10 +6,16 @@ module Resolvers
     argument :id, ID, required: true
 
     def resolve(id:)
-      response = Faraday.get("#{ENV.fetch('POLICY_BASE_API_URL')}/policies/#{id}")
-      return unless response.success?
+      policy = policy_base_client.find_policy(id)
+      return if policy.blank?
 
-      JSON.parse(response.body, symbolize_names: true)
+      policy
+    end
+
+    private
+
+    def policy_base_client
+      Clients::PolicyBase.new(context[:auth_token])
     end
   end
 end

@@ -5,10 +5,16 @@ module Resolvers
     type [Types::PolicyType], null: true
 
     def resolve
-      response = Faraday.get("#{ENV.fetch('POLICY_BASE_API_URL')}/policies")
-      return unless response.success?
+      policies = policy_base_client.list_policies
+      return nil if policies.blank?
 
-      JSON.parse(response.body, symbolize_names: true)
+      policies
+    end
+
+    private
+
+    def policy_base_client
+      Clients::PolicyBase.new(context[:auth_token])
     end
   end
 end
